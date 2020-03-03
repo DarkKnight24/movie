@@ -1,5 +1,4 @@
-var urlHead = "http://localhost:8080";
+var urlHead = "http://localhost:8081";
+var url = urlHead.toString();
 
-var urlFoot = "/Movie";
-
-var url = urlHead.toString() + urlFoot.toString();
+var urlPageHead = "http://localhost:8087/Movie/jsp";

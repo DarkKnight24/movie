@@ -1,12 +1,5 @@
-<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-	User user = (User)request.getSession().getAttribute("user");
-	if(user == null){
-		response.sendRedirect("./login.jsp");
-	}
-%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,64 +22,64 @@
 </head>
 <body>
 
-    <!-- 导航栏 -->
-    <jsp:include page="header.jsp"/>
+<!-- 导航栏 -->
+<jsp:include page="header.jsp"/>
 
-    <!-- 占位符 -->
-    <div style="margin-top: 90px;"></div>
+<!-- 占位符 -->
+<div style="margin-top: 90px;"></div>
 
-    <!-- 主体 -->
-    <div class="container">
-        <div class="order-progress-bar">
-            <div class="step first done">
-                <span class="step-num">1</span>
-                <div class="bar"></div>
-                <span class="step-next">选择影片场次</span>
-            </div>
-            <div class="step done">
-                <span class="step-num">2</span>
-                <div class="bar"></div>
-                <span class="step-next">选择座位</span>
-            </div>
-            <div class="step done">
-                <span class="step-num">3</span>
-                <div class="bar"></div>
-                <span class="step-next">付款</span>
-            </div>
-            <div class="step last done">
-                <span class="step-num">4</span>
-                <div class="bar"></div>
-                <span class="step-next">影院取票观影</span>
-            </div>
+<!-- 主体 -->
+<div class="container">
+    <div class="order-progress-bar">
+        <div class="step first done">
+            <span class="step-num">1</span>
+            <div class="bar"></div>
+            <span class="step-next">选择影片场次</span>
         </div>
-        <div class="main-paystatus">
-            <img src="../static/images/success.jpg"/>
-            <p class="statustext">已完成支付</p>
+        <div class="step done">
+            <span class="step-num">2</span>
+            <div class="bar"></div>
+            <span class="step-next">选择座位</span>
         </div>
-        <div class="right">
-            <p class="warning">
-                该页面关闭后可以在<span class="attention">个人订单</span>页面查看订单信息
-            </p>
-            <div>
-                <div class="pay-btn" onclick="returnCenter()">返回个人订单</div>
-            </div>
+        <div class="step done">
+            <span class="step-num">3</span>
+            <div class="bar"></div>
+            <span class="step-next">付款</span>
+        </div>
+        <div class="step last done">
+            <span class="step-num">4</span>
+            <div class="bar"></div>
+            <span class="step-next">影院取票观影</span>
         </div>
     </div>
+    <div class="main-paystatus">
+        <img src="../static/images/success.jpg"/>
+        <p class="statustext">已完成支付</p>
+    </div>
+    <div class="right">
+        <p class="warning">
+            该页面关闭后可以在<span class="attention">个人订单</span>页面查看订单信息
+        </p>
+        <div>
+            <div class="pay-btn" onclick="returnCenter()">返回个人订单</div>
+        </div>
+    </div>
+</div>
 
-    <!-- 脚 -->
-    <jsp:include page="footer.jsp"/>
+<!-- 脚 -->
+<jsp:include page="footer.jsp"/>
 
-    <script>
-        var clientHeight = document.documentElement.clientHeight;
+<script>
+    var clientHeight = document.documentElement.clientHeight;
 
-        window.onload = function(){
-			 initHeader();
-        }
-        
-        function returnCenter(){
-            window.location.href = "./center.jsp"
-        }
+    window.onload = function () {
+        initHeader();
+    }
 
-    </script>
+    function returnCenter() {
+        window.location.href = "./center.jsp"
+    }
+
+</script>
 </body>
 </html>
