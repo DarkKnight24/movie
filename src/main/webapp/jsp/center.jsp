@@ -283,7 +283,7 @@
             "</div>"
         );
         var HeadImg = "";
-        if (user.user_headImg == null || typeof user.user_headImg == "undefined") {
+        if (user.userHeadImg == null || typeof user.userHeadImg == "undefined") {
             HeadImg = "../upload/head/demo.jpg";
         } else {
             HeadImg = user.userHeadImg;
@@ -406,7 +406,7 @@
         var user_old_password = $('#oldPassword').val(),
             user_new_password = $('#newPassword').val(),
             user_repeat_password = $('#repeatPassword').val();
-        var user_id = user.user_id;
+        var user_id = user.userId;
         console.log(user_old_password + "," + user_new_password + "," + user_repeat_password);
         if (user_old_password == "" || user_new_password == "" || user_repeat_password == "") {
             layui.use(['layer'], function () {
@@ -417,7 +417,7 @@
                     }
                 );
             });
-        } else if (user_old_password != user.user_pwd) {
+        } else if (user_old_password != user.userPwd) {
             layui.use(['layer'], function () {
                 var layer = layui.layer;
                 layer.alert('旧密码输入错误！', {icon: 0, offset: clientHeight / 5},
